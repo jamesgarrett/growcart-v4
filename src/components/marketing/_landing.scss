@@ -1,0 +1,128 @@
+body{
+	margin-bottom: 0px !important;
+}
+
+html{
+	max-width:100%;
+	overflow-x:hidden;
+}
+
+header#landing{
+	height:90vh;
+	background-image: linear-gradient(#1fd6b5, #64ffb0);
+	/*background-image: url(/assets/icons/growcart-bg.svg);*/
+	background-repeat: no-repeat;
+	background-size:cover;
+	background-position: bottom;
+	position:relative;
+	div navbar .logo .nav-link img {
+	    box-shadow: none;
+	}
+	navbar {
+	    border-bottom: 2px solid white;
+	}
+	.dropdown{
+		z-index:9;
+	}
+	.detail{
+		color:white;
+	}
+}
+
+.cart{
+  position: absolute;
+  width: 100vw;
+  bottom: -13vw;
+  left: 0;
+}
+
+.pt-5.mt-5.text-white.col-md-6 {
+    z-index: 1;
+}
+
+
+#features{
+	background:white !important;
+	.container{
+		transform: translateY(-15vh);
+	}
+	.card{
+		border:1px solid #efefef;
+		-webkit-box-shadow: -4px 4px 13px 0px rgba(0,0,0,0.28);
+		-moz-box-shadow: -4px 4px 13px 0px rgba(0,0,0,0.28);
+		box-shadow: -4px 4px 13px 0px rgba(0,0,0,0.28);
+	}
+}
+
+
+.separator{
+  width: 105vw;
+  position: absolute;
+  left: 0px;
+  bottom: -15.9vw;
+}
+
+#about{
+	background: #efefef;
+}
+
+@media screen and (max-width: 800px){
+	header#landing{
+		height:700px;
+		.nav-link{
+			padding:.5rem 0 !important;
+		}
+		navbar li.p-2{
+		    padding:.5rem 0 !important;
+		}
+	}
+	#features{
+		.container{
+			transform: translateY(-5vh);
+		}
+
+	}
+}
+
+navbar{
+    li a{
+	    font-family: 'Roboto', 'helvetica', sans-serif;
+	    letter-spacing: 0.1rem;
+    }
+    .logo img{
+/*		border-radius: 4px;
+		-webkit-box-shadow: -4px 4px 13px 0px rgba(0,0,0,0.28);
+		-moz-box-shadow: -4px 4px 13px 0px rgba(0,0,0,0.28);
+		box-shadow: -4px 4px 13px 0px rgba(0,0,0,0.28);*/
+	}
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family: 'Sofia Pro', 'helvetica', sans-serif;
+}
+
+.detail{
+	font-size: 1.5rem;
+	line-height: 2.5rem;
+	font-weight: 400;
+	letter-spacing: .1rem;
+}
+
+.card-img-top{
+	padding:32%;
+	margin:0 auto;
+	text-align: center;
+}
+
+#cta{
+	background:#efefef;
+	position:relative;
+	.separator {
+	    bottom: 0;
+	    top: -14.9vw;
+	}
+}
+
+.btn.gradient{
+	background-image: linear-gradient(#64ffb0, #1fd6b5);
+}

@@ -1,0 +1,18 @@
+footer{
+	padding-bottom: 10vh;
+	position:relative;
+	bottom:0;
+	background:#fff;
+	.footer-nav{
+		padding: 0px;
+		padding-top:50px;
+	}
+	.logo{
+		position:absolute;
+		right:50%;
+		transform: translateX(50%) translateY(-50%);
+	}
+	ul{
+		list-style-type: none;
+	}
+}
