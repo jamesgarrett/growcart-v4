@@ -1,4 +1,6 @@
 const functions = require('firebase-functions');
+const admin = require('firebase-admin');
+admin.initializeApp(functions.config().firebase)
 
 // // Create and Deploy Your First Cloud Functions
 // // https://firebase.google.com/docs/functions/write-firebase-functions
@@ -6,3 +8,42 @@ const functions = require('firebase-functions');
 exports.helloWorld = functions.https.onRequest((request, response) => {
  response.send("Hello from Firebase!");
 });
+
+const createNotification = (notification => {
+	return admin.firestore().collection('notifications')
+		.add(notification)
+		.then(doc => console.log('notification added', doc))
+})
+
+exports.productCreated = functions.firestore
+	.document('products/{productid}')
+	.onCreate(doc => {
+
+		const product = doc.data();
+		const notification = {
+			content: 'Added a new product',
+			user: `${product.authorFirstName} ${product.authorLastName}`,
+			time: admin.firestore.FieldValue.serverTimestamp()
+		}
+
+	return createNotification(notification);
+})
+
+exports.userJoined = functions.auth.user()
+	.onCreate(user => {
+
+		return admin.firestore().collection('users')
+		.doc(user.uid).get().then(doc => {
+
+			const newUser = doc.data();
+			const notification = {
+				content: 'Joined your party',
+				user: `${newUser.firstName} ${newUser.lastName}`,
+				time: admin.firestore.FieldValue.serverTimestamp()
+			}
+
+		return createNotification(notification);
+
+		})
+
+})
