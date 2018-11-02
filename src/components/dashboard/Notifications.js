@@ -11,6 +11,7 @@ const Notifications = () => {
 						<li>Notifications</li>
 						<li>Notifications</li>
 						<li>Notifications</li>
+						<li>Notifications</li>
 					</ul>
 				</div>
 			</div>
